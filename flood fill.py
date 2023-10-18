@@ -5,6 +5,11 @@ def flood_fill(input_board: List[str], old: str, new: str, x: int, y: int) -> Li
         # You can combine the two if statements below into one, but I think it's easier to read this way.
         if x < 0 or x >= len(input_board) or y < 0 or y >= len(input_board[0]) or input_board[x][y] != old:
             return
+
+        # Check if x and y are within valid coordinates
+        if x >= len(input_board) or y >= len(input_board[0]):
+            return input_board  # Return the board unchanged
+            
         # if x < 0 or x >= len(input_board) or y < 0 or y >= len(input_board[0]):
         #     return
         # if input_board[x][y] != old:
